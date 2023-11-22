@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="/main.css" />
+  </head>
+  <body>
+    <h1> Bargains from <%=shopName%></h1>
+    <p> Check our lowest prices!</p>
+
+    <!-- this for look create a local variable named book that takes all data form availableBooks and shows as a list following id, name and price -->
+    <ul>
+        <% for(let book of availableBooks) { %>
+        <li><%= book.id %> <%= book.name %>, £ <%= book.price %></li>
+        <% } %>
+        </ul>
+
+  </body>
+</html>
