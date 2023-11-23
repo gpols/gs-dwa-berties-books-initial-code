@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Set the title of the page, dynamically using the searchKeyword variable -->
+  <title>Search Results for <%= searchKeyword %>
+  </title>
+  <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+
+<body>
+  <!-- Display a heading with the searchKeyword variable -->
+  <h1>Search Results for <%= searchKeyword %>
+  </h1>
+
+  <!-- Use an if statement to check if there are search results -->
+  <% if (result.length> 0) { %>
+    <!-- If there are results, display them in an unordered list -->
+    <p>Here are the books that match your search:</p>
+    <ul>
+      <!-- Use a for loop to iterate over the result array and display each book as a list item -->
+      <!-- Display book details, including id, name, and price -->
+      <% for(let book of result) { %>
+        <li>
+          <%= book.id %>
+            <%= book.name %>, £ <%= book.price %>
+        </li>
+        <% } %>
+    </ul>
+    <% } else { %>
+      <!-- If there are no results, display a message -->
+      <p>No books found for <%= searchKeyword %>
+      </p>
+      <% } %>
+
+</body>
+
+</html>
